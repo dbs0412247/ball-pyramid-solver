@@ -1,8 +1,10 @@
 # Ball Pyramid Solver
 
-Figuring out a way to beat that stupid game, brute-force or otherwise.
+**This repo is a work-in-progress**
 
-Work in progress.
+Figuring out a way to beat this stupid game, brute-force or otherwise.
+
+![Alt text](images/game-overview.jpeg?raw=true "This BS")
 
 # Algorithm
 
