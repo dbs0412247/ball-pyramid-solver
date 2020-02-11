@@ -13,14 +13,19 @@ Something that I thought up in ~2 hrs after work.
 ```cpp
 int main(int argc, const char** argv)
 {
-	GameState initialState;
+	GameState initialState, result;
 	
 	// TODO: code here to read initialState from input
 	
-	if ( recursive_solve(currentState) )
+	if ( recursive_solve(initialState, result) )
+		result.print();
+	else // is this even possible?
+		cout << "No solution from the given initial state" << endl;
+
+	return 0;
 }
 
-bool recursive_solve(GameState currentState, PiecePlacement *result)
+bool recursive_solve(GameState currentState, PiecePlacement &result)
 {
 	// Check for done
 	if ( isWinState(currentState) )
