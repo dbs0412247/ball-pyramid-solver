@@ -62,8 +62,8 @@ bool recursive_solve(GameState currentState, PiecePlacement *result)
 * If each ball has radius of `1`, then every connected node pair in the "board (graph)" is has a distance of `2` apart.
 * Hence, any node in layer N is:
 	* connected with `4` nodes in layer N+1
-	* connected with `2`-`4` nodes in layer N
-	* connected with `1`-`4` nodes in layer N-1
+	* connected with `2`, `3` or `4` nodes in layer N
+	* connected with `1`, `2` or `4` nodes in layer N-1
 * Vertical distance between the centers of the balls on adjacent layers is `sqrt(2)`, which also equals the distance between any diagonally adjacent balls on the same layer.
 * The sum of all balls in all pieces equals the number of nodes in the graph.
 
