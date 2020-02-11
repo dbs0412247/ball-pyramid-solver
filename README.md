@@ -1,6 +1,6 @@
 # Ball Pyramid Solver
 
-**This repo is a work-in-progress**
+**This repo is a work-in-progress. Collaboration and constructive comments welcome.**
 
 Figuring out a way to beat this stupid game, brute-force or otherwise.
 
@@ -8,19 +8,26 @@ Figuring out a way to beat this stupid game, brute-force or otherwise.
 
 # Algorithm
 
-```
-function main()
+Something that I thought up in ~2 hrs after work.
+
+```cpp
+int main(int argc, const char** argv)
 {
-	GameState initialState; 	// from input	
+	GameState initialState;
 	
-	// code here to read initialState from input
+	// TODO: code here to read initialState from input
+	
+	if ( recursive_solve(currentState) )
 }
 
-function recursive_solve(GameState currentState) returns boolean
+bool recursive_solve(GameState currentState, PiecePlacement *result)
 {
 	// Check for done
-	if (isWinState(currentState))
+	if ( isWinState(currentState) )
+	{
+		result = currentState.getPiecePlacement();
 		return true;
+	}
 	
 	// Not done, place next piece and recurse
 	bool isDone = false;
@@ -29,8 +36,8 @@ function recursive_solve(GameState currentState) returns boolean
 	{
 		List<GameState> possibleStates = currentState.getPossibleStatesFromNewPiece(p)
 		while ( NOT(isDone) AND NOT(possibleStates.empty()) )
-			GameState nextState = possibleStates.take();
-			isDone = recursive_solve(usage, nextState);		
+			GameState nextState = possibleStates.take();			
+			isDone = recursive_solve(nextState);		
 		} // end while
 		
 		p = current.take_unused_piece(); // loop advancement
